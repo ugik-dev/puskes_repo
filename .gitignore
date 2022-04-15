@@ -1,2 +1,4 @@
+/applicaton/config/database.php
+/upload/images/*
 /assets/captcha/*
 /assets/ckfinder/core/connector/php/assets/ckfinder/userfiles/*

@@ -133,7 +133,7 @@ $jum_pesan = $query->num_rows();
               <div class="box-body">
                 <div class="form-group">
                   <label>Tanggal Posting</label>
-                  <input type="date" name="tulisan_tanggal" class="form-control" value="<?= !empty($return_data) ? $return_data['tulisan_tanggal'] : ''; ?>" />
+                  <input type="date" name="tulisan_tanggal" class="form-control" value="<?= !empty($return_data) ? $return_data['tulisan_tanggal'] : ''; ?>" required />
                 </div>
                 <div class="form-group">
                   <label>Kategori</label>

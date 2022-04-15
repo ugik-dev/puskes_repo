@@ -73,6 +73,8 @@ class Tulisan extends CI_Controller
 			}
 		} else {
 		}
+		$this->m_tulisan->add($data);
+
 		echo $this->session->set_flashdata('msg', 'info');
 		redirect('admin/tulisan');
 		$this->m_tulisan->add($data);
