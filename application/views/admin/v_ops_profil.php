@@ -108,7 +108,7 @@ $jum_pesan = $query->num_rows();
                 </div>
                 <div class="col-md-6">
                   <label>Email</label>
-                  <input type="text" name="no_wa" class="form-control" value="<?= $data['no_wa'] ?>" placeholder="" />
+                  <input type="text" name="email" class="form-control" value="<?= $data['email'] ?>" placeholder="" />
                 </div>
                 <div class="col-md-6">
                   <label>Kata Sambutan</label>
