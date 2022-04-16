@@ -24,12 +24,16 @@
 
 		<div class="container py-4">
 			<div class="row">
-				<?php $this->load->view('page/asside'); ?>
+				<div class="col-lg-3">
+					<?php $this->load->view('page/asside'); ?>
+				</div>
 				<div class="col-lg-9">
 					<article class="post post-large blog-single-post border-0 m-0 p-0">
-						<div class="post-image ms-0">
-							<img src="<?= base_url('upload/images/') . $dataContent['tulisan_gambar'] ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-						</div>
+						<?php if (!empty($dataContent['tulisan_gambar'])) { ?>
+							<div class="post-image ms-0">
+								<img src="<?= base_url('upload/images/') . $dataContent['tulisan_gambar'] ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+							</div>
+						<?php } ?>
 						<div class="post-date ms-0">
 							<span class="day"><?= substr($dataContent['tulisan_tanggal'], 8, 2) ?></span>
 							<span class="month"><?= bulan_indo_singkat(substr($dataContent['tulisan_tanggal'], 6, 2)) ?></span>

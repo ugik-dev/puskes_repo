@@ -53,12 +53,29 @@ $route['default_controller'] = 'home';
 $route['administrator'] = 'admin/login';
 $route['admin'] = 'admin/login';
 $route['profil/(:any)'] = 'menu/index/profil/$1';
-$route['berita/'] = 'berita/index/Berita';
+$route['informasi/(:any)'] = 'menu/index/informasi/$1';
+$route['pelayanan/(:any)'] = 'menu/index/pelayanan/$1';
+$route['poskesdes_pustu/(:any)'] = 'menu/index/poskesdes_pustu/$1';
+
+$route['pegawai'] = 'menu/pegawai';
+$route['bank_data'] = 'menu/bank_data';
+$route['galeri'] = 'menu/galeri';
+
+$route['berita'] = 'berita/index/Berita';
 $route['berita/(:any)'] = 'berita/detail/Berita/$1';
+
+$route['pengumuman'] = 'berita/index/Pengumuman';
 $route['pengumuman/(:any)'] = 'berita/detail/Pengumuman/$1';
+
+$route['agenda'] = 'berita/index/Agenda';
+$route['agenda/(:any)'] = 'berita/detail/Agenda/$1';
+
+$route['loker'] = 'berita/index/loker';
+$route['loker/(:any)'] = 'berita/detail/loker/$1';
+
 $route['artikel/(:any)'] = 'blog/detail/$1';
-$route['inovasi'] = 'program';
-$route['inovasi'] = 'program/index';
-$route['inovasi/(:any)'] = 'program/detail/$1';
+// $route['informasi'] = 'program';
+// $route['informasi'] = 'program/index';
+// $route['inovasi/(:any)'] = 'program/detail/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

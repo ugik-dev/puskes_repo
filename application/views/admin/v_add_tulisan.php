@@ -143,6 +143,8 @@ $jum_pesan = $query->num_rows();
                     <option value="Berita">Berita</option>
                     <option value="Pengumuman">Pengumuman</option>
                     <option value="Agenda">Agenda</option>
+                    <option value="loker">Lowongan Pekerjaan</option>
+
                     <?php if (!empty($return_data)) {
                       if ($return_data['tulisan_jenis'] == 'Berita')
                         echo ' <option value="Berita" selected>Berita</option> ';
@@ -153,6 +155,16 @@ $jum_pesan = $query->num_rows();
                         echo ' <option value="Berita" selected>Berita</option> ';
                       else
                         echo ' <option value="Berita">Berita</option> ';
+
+                      if ($return_data['tulisan_jenis'] == 'Agenda')
+                        echo ' <option value="Agenda" selected>Agenda</option> ';
+                      else
+                        echo ' <option value="Agenda">Agenda</option> ';
+
+                      if ($return_data['tulisan_jenis'] == 'Lowongan Pekerjaan')
+                        echo ' <option value="Lowongan Pekerjaan" selected>Lowongan Pekerjaan</option> ';
+                      else
+                        echo ' <option value="Lowongan Pekerjaan">Lowongan Pekerjaan</option> ';
                     }
                     ?>
                   </select>

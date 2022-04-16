@@ -1,5 +1,6 @@
 /application/config/database.php
 /upload/images/*
+/upload/files/*
 /assets/captcha/*
 /.htaccess
 /cgi-bin

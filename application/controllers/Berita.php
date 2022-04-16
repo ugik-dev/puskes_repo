@@ -9,14 +9,14 @@ class Berita extends CI_Controller
         $this->m_pengunjung->count_visitor();
     }
 
-    function index()
+    function index($jenis)
     {
         // $data = $this->m_general->get_tulisan(array('lengkap' => true, 'kategori' => $kategori, 'slug' => $slug))[0];
-        $filter = array('jenis' => 'berita', 'limit' => 4, 'tulisan_isi_c' => 450);
+        $filter = array('jenis' => $jenis, 'limit' => 4, 'tulisan_isi_c' => 450);
         $p = $this->input->get();
         if (empty($p['page'])) $filter['page'] = 1;
         else $filter['page']  = $p['page'];
-
+        $data['link'] = strtolower($jenis);
         $data['tulisan'] = $this->m_general->get_tulisan($filter);
         $data['total_page'] = ceil($this->m_general->get_tulisan_page($filter) / 4);
         $data['page'] = $filter['page'];

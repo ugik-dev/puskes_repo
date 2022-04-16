@@ -66,13 +66,13 @@ $jum_pesan = $query->num_rows();
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          List Berita
+          List Menu
           <small></small>
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">Berita</a></li>
-          <li class="active">List Berita</li>
+          <li><a href="#">Menu</a></li>
+          <li class="active">List Menu</li>
         </ol>
       </section>
 

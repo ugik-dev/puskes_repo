@@ -23,7 +23,9 @@
 		</section>
 		<div class="container py-4">
 			<div class="row">
-				<?php $this->load->view('page/asside'); ?>
+				<div class="col-lg-3">
+					<?php $this->load->view('page/asside'); ?>
+				</div>
 				<div class="col-lg-9">
 					<div class="blog-posts">
 						<?= $dataContent['konten'] ?>

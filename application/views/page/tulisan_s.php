@@ -23,16 +23,22 @@
 					<?php foreach ($dataContent['tulisan'] as $brt) { ?>
 						<article class="post post-medium">
 							<div class="row mb-3">
-								<div class="col-lg-5">
-									<div class="post-image">
-										<a href="<?= base_url('berita/' . $brt['tulisan_slug']) ?>">
-											<img src="<?= base_url('upload/images/' . $brt['tulisan_gambar']) ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
-										</a>
+								<?php if (!empty($brt['tulisan_gambar'])) { ?>
+									<div class="col-lg-5">
+										<div class="post-image">
+											<a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>">
+												<img src="<?= base_url('upload/images/' . $brt['tulisan_gambar']) ?>" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="">
+											</a>
+										</div>
 									</div>
-								</div>
-								<div class="col-lg-7">
+								<?php
+									$col = 7;
+								} else {
+									$col = 12;
+								} ?>
+								<div class="col-lg-<?= $col ?>">
 									<div class="post-content">
-										<h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2"><a href="<?= base_url('berita/' . $brt['tulisan_slug']) ?>"><?= $brt['tulisan_judul'] ?></a></h2>
+										<h2 class="font-weight-semibold pt-4 pt-lg-0 text-5 line-height-4 mb-2"><a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>"><?= $brt['tulisan_judul'] ?></a></h2>
 										<p class="mb-0"> <?php echo strip_tags($brt['tulisan_isi_c']); ?>[...]</p>
 										</p>
 									</div>
@@ -44,8 +50,8 @@
 										<span><i class="far fa-calendar-alt"></i> <?= tgl_indo(substr($brt['tulisan_tanggal'], 0, 10)) ?> </span>
 										<span><i class="far fa-user"></i> Penulis : <a href="#"><?= $brt['tulisan_author'] ?></a> </span>
 										<span><i class="far fa-folder"></i> <a href=""><?= $brt['tulisan_kategori_nama'] ?></a> </span>
-										<span><i class="far fa-comments"></i> <a href="<?= base_url('berita/' . $brt['tulisan_slug']) ?>">12 Comments</a></span>
-										<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="<?= base_url('berita/' . $brt['tulisan_slug']) ?>" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
+										<span><i class="far fa-comments"></i> <a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>">12 Comments</a></span>
+										<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
 									</div>
 								</div>
 							</div>
@@ -53,8 +59,8 @@
 					<?php } ?>
 
 					<ul class="pagination float-end">
-						<li class="page-item"><a class="page-link" href="<?= base_url('berita?page=1') ?>">Awal</a></li>
-						<li class="page-item"><a class="page-link" href="<?= base_url('berita?page=' . ($dataContent['page'] - 1)) ?>"><i class="fas fa-angle-left"></i></a></li>
+						<li class="page-item"><a class="page-link" href="<?= base_url($link . '?page=1') ?>">Awal</a></li>
+						<li class="page-item"><a class="page-link" href="<?= base_url($link . '?page=' . ($dataContent['page'] - 1)) ?>"><i class="fas fa-angle-left"></i></a></li>
 						<?php
 						if ($dataContent['page'] >= $dataContent['total_page']) {
 							$last = $dataContent['total_page'];
@@ -65,15 +71,18 @@
 							if ($i < 1) $i = 1;
 
 						?>
-							<li class="page-item <?= $i == $dataContent['page'] ? 'active' : ''; ?>"><a class="page-link" href="<?= base_url('berita?page=' . $i) ?>"><?= $i ?></a></li>
+							<li class="page-item <?= $i == $dataContent['page'] ? 'active' : ''; ?>"><a class="page-link" href="<?= base_url($link . '?page=' . $i) ?>"><?= $i ?></a></li>
 						<?php } ?>
-						<li class="page-item"><a class="page-link" href="<?= base_url('berita?page=' . $dataContent['page'] + 1) ?>"><i class="fas fa-angle-right"></i></a></li>
-						<li class="page-item"><a class="page-link" href="<?= base_url('berita?page=' . $dataContent['total_page']) ?>">Terakhir</a></li>
+						<li class="page-item"><a class="page-link" href="<?= base_url($link . '?page=' . $dataContent['page'] + 1) ?>"><i class="fas fa-angle-right"></i></a></li>
+						<li class="page-item"><a class="page-link" href="<?= base_url($link . '?page=' . $dataContent['total_page']) ?>">Terakhir</a></li>
 					</ul>
 
 				</div>
 			</div>
-			<?php $this->load->view('page/asside'); ?>
+			<div class="col-lg-3">
+
+				<?php $this->load->view('page/asside'); ?>
+			</div>
 		</div>
 	</div>
 </div>

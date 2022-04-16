@@ -109,26 +109,30 @@
 												}
 												?>
 												<li class="dropdown dropdown-full-color dropdown-light">
-													<a class="dropdown-item dropdown-toggle " href="#" id="menu_profil">
+													<a class="dropdown-item dropdown-toggle " href="<?= base_url('pegawai') ?>" id="menu_profil">
 														Pegawai
 													</a>
 												</li>
-												<?php
-												if (!empty($menu['info'])) { ?>
-													<li class="dropdown dropdown-full-color dropdown-light">
-														<a class="dropdown-item dropdown-toggle">
-															Informasi
-														</a>
-														<ul class="dropdown-menu">
-															<?php foreach ($menu['info'] as $prl) {
-																echo '<li><a class="dropdown-item" href="' . base_url('profil/') . $prl['slug'] . '">' . $prl['nama_menu'] . '</a></li>';
+												<li class="dropdown dropdown-full-color dropdown-light">
+													<a class="dropdown-item dropdown-toggle">
+														Informasi
+													</a>
+													<ul class="dropdown-menu">
+														<li><a class="dropdown-item" href="<?= base_url('berita') ?>">Berita</a></li>
+														<li><a class="dropdown-item" href="<?= base_url('pengumuman') ?>">Pengumuman</a></li>
+														<li><a class="dropdown-item" href="<?= base_url('agenda') ?>">Agenda</a></li>
+														<li><a class="dropdown-item" href="<?= base_url('loker') ?>">Lowongan Pekerjaan</a></li>
+														<?php
+														if (!empty($menu['informasi'])) { ?>
+															<?php foreach ($menu['informasi'] as $inf) {
+																echo '<li><a class="dropdown-item" href="' . base_url('informasi/') . $inf['slug'] . '">' . $inf['nama_menu'] . '</a></li>';
 															}
 															?>
-														</ul>
-													</li>
-												<?php
-												}
-												?>
+														<?php
+														}
+														?>
+													</ul>
+												</li>
 												<?php
 												if (!empty($menu['pelayanan'])) { ?>
 													<li class="dropdown dropdown-full-color dropdown-light">
@@ -137,7 +141,7 @@
 														</a>
 														<ul class="dropdown-menu">
 															<?php foreach ($menu['pelayanan'] as $prl) {
-																echo '<li><a class="dropdown-item" href="' . base_url('profil/') . $prl['slug'] . '">' . $prl['nama_menu'] . '</a></li>';
+																echo '<li><a class="dropdown-item" href="' . base_url('pelayanan/') . $prl['slug'] . '">' . $prl['nama_menu'] . '</a></li>';
 															}
 															?>
 														</ul>
@@ -145,6 +149,32 @@
 												<?php
 												}
 												?>
+												<?php
+												if (!empty($menu['poskesdes_pustu'])) { ?>
+													<li class="dropdown dropdown-full-color dropdown-light">
+														<a class="dropdown-item dropdown-toggle">
+															Poskesdes & Pustu
+														</a>
+														<ul class="dropdown-menu">
+															<?php foreach ($menu['poskesdes_pustu'] as $pos_pus) {
+																echo '<li><a class="dropdown-item" href="' . base_url('poskesdes_pustu/') . $pos_pus['slug'] . '">' . $pos_pus['nama_menu'] . '</a></li>';
+															}
+															?>
+														</ul>
+													</li>
+												<?php
+												}
+												?>
+												<li class="dropdown dropdown-full-color dropdown-light">
+													<a class="dropdown-item dropdown-toggle " href="<?= base_url('bank_data') ?>" id="menu_bank_data">
+														Bank Data
+													</a>
+												</li>
+												<li class="dropdown dropdown-full-color dropdown-light">
+													<a class="dropdown-item dropdown-toggle " href="<?= base_url('galeri') ?>" id="menu_galeri">
+														Galeri
+													</a>
+												</li>
 											</ul>
 										</nav>
 									</div>

@@ -24,6 +24,26 @@ class M_menu extends CI_Model
         return $obj_res;
     }
 
+    function get_pegawai($filter = [])
+    {
+        $this->db->select('*');
+
+        $this->db->from('tbl_pegawai');
+        $query = $this->db->get();
+        $obj_res =  $query->result_array();
+        return $obj_res;
+    }
+
+    function get_bank_data($filter = [])
+    {
+        $this->db->select('*');
+
+        $this->db->from('tbl_files');
+        $query = $this->db->get();
+        $obj_res =  $query->result_array();
+        return $obj_res;
+    }
+
     public function add($data)
     {
         $this->db->insert('menu', DataStructure::slice($data, ['kategori', 'nama_menu', 'konten', 'slug', 'status', 'no_urut']));
