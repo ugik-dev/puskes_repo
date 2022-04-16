@@ -149,8 +149,8 @@ $jum_pesan = $query->num_rows();
                 <div class="form-group">
                   <label>Status</label>
                   <select class="form-control select2" name="status" id="status" style="width: 100%;" required>
-                    <option value="1">Aktif</option>
-                    <option value="2">Non Aktif</option>
+                    <option value="1" <?= $return_data['status'] == 1 ? ' selected' : '' ?>> Aktif</option>
+                    <option value="2" <?= $return_data['status'] == 2 ? ' selected' : '' ?>>Non Aktif</option>
                   </select>
                 </div>
                 <!-- /.form group -->

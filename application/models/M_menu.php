@@ -8,7 +8,7 @@ class M_menu extends CI_Model
         if (!empty($filter['lengkap']))
             $this->db->select('*');
         else
-            $this->db->select('id_menu,kategori,nama_menu,slug');
+            $this->db->select('id_menu,kategori,nama_menu,slug, status');
 
         // if(!empty($filter['limit'])){
         //     $this->db->limit($filter['limit'],'ASC');

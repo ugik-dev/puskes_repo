@@ -24,10 +24,11 @@ class Home extends CI_Controller
 		// $x['loker'] = $this->m_loker->get_loker_home();
 		// $x['agenda'] = $this->m_agenda->get_agenda_home();
 		// $x['tot_pegawai'] = $this->db->get('tbl_pegawai')->num_rows();
-		$data['pengumuman'] = $this->M_general->get_pengumuman(array('limit' => 3));
 		// echo json_encode($data);
 		// die();
-		$data['berita'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'berita'));
+		// $data['pengumuman'] = $this->M_general->get_pengumuman(array('limit' => 3));
+		$data['pengumuman'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'Pengumuman'));
+		$data['berita'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'Berita'));
 		$data['galeri'] = $this->M_general->get_galeri(array('limit' => 3));
 		// $x['tot_files'] = $this->db->get('tbl_files')->num_rows();
 		// $x['tot_agenda'] = $this->db->get('tbl_agenda')->num_rows();

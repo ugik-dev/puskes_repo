@@ -17,5 +17,5 @@
 	$this->load->view($pageContent, $dataContent);
 	// echo $captcha_img;
 
-	$this->load->view('template/footer');
+	$this->load->view('template/footer',	$profil);
 	?>

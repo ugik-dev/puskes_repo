@@ -36,11 +36,11 @@
 						</div>
 
 						<div class="post-content ms-0">
-							<h2 class="font-weight-semi-bold"><a href="blog-post.html"><?= $dataContent['tulisan_judul'] ?></a></h2>
+							<h2 class="font-weight-semi-bold"><a href="#"><?= $dataContent['tulisan_judul'] ?></a></h2>
 							<div class="post-meta">
 								<span><i class="far fa-user"></i> By <a href="#"><?= $dataContent['tulisan_author'] ?></a> </span>
-								<span><i class="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Design</a> </span>
-								<span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span>
+								<!-- <span><i class="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Design</a> </span> -->
+								<!-- <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span> -->
 							</div>
 							<div class="blog-posts">
 								<?= $dataContent['tulisan_isi'] ?>
@@ -78,7 +78,7 @@
 							</div>
 
 							<div id="comments" class="post-block mt-5 post-comments">
-								<h4 class="mb-3">Comments (3)</h4>
+								<h4 class="mb-3">Komenetar (<?= count($komentar) ?>)</h4>
 
 								<ul class="comments">
 									<?php foreach ($komentar as $k) { ?>

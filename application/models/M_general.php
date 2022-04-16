@@ -9,7 +9,7 @@ class M_general extends CI_Model
         if (!empty($filter['lengkap']))
             $this->db->select('*');
         else
-            $this->db->select('tulisan_id,tulisan_judul,tulisan_tanggal,tulisan_slug,tulisan_kategori_nama,tulisan_author,tulisan_jenis,tulisan_gambar,LEFT(tulisan_isi , 50) tulisan_isi');
+            $this->db->select('tulisan_id,tulisan_judul,tulisan_tanggal,tulisan_slug,tulisan_kategori_nama,tulisan_author,tulisan_jenis,tulisan_gambar,LEFT(tulisan_isi , 100) tulisan_isi');
         if (!empty($filter['tulisan_isi_c']))
             $this->db->select('LEFT(tulisan_isi , ' . $filter['tulisan_isi_c'] . ') tulisan_isi_c');
 

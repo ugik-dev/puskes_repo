@@ -233,19 +233,22 @@
             <div class="col-sm-6 col-lg-6 mb-4 mb-lg-0">
                 <span class="thumb-info thumb-info-hide-wrapper-bg thumb-info-no-zoom">
                     <!-- <span class="thumb-info-wrapper">
-									<a href="about-me.html">
-										<img src="<?= base_url('upload/images/' . $pgm['pengumuman_gambar']) ?>" class="img-fluid" alt="">
-									</a>
-								</span> -->
+                        <a href="about-me.html">
+                            <img src="<?= base_url('upload/images/' . $pgm['tulisan_gambar']) ?>" class="img-fluid" alt="">
+                        </a>
+                    </span> -->
                     <span class="thumb-info-caption">
-                        <h3 class="font-weight-extra-bold text-color-dark text-4 line-height-1 mt-3 mb-0"><?= $pgm['pengumuman_judul'] ?></h3>
-                        <span class="text-2 mb-0"><?= tgl_indo(substr($pgm['pengumuman_tanggal'], 0, 10)) ?></span>
-                        <span class="thumb-info-caption-text pt-1"><?= $pgm['pengumuman_deskripsi'] ?></span>
-                        <span class="thumb-info-social-icons">
-                            <a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                            <a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                            <a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
+                        <a href="<?= base_url('pengumuman/' . $pgm['tulisan_slug']) ?>">
+                            <h3 class="font-weight-extra-bold text-color-dark text-4 line-height-1 mt-3 mb-0"><?= $pgm['tulisan_judul'] ?></h3>
+                        </a>
+                        <span class="text-2 mb-0"><?= tgl_indo(substr($pgm['tulisan_tanggal'], 0, 10)) ?></span>
+                        <span class="thumb-info-caption-text pt-1 mb-0 pb-0"> <?php echo strip_tags($pgm['tulisan_isi']); ?>...
+                            <a href="<?= base_url('pengumuman/' . $pgm['tulisan_slug']) ?>" class="read-more font-weight-semibold text-2 mt-0 pt-0">read more <i class="fas fa-chevron-right text-1 ms-1"></i></a>
                         </span>
+
+                        <!-- <span class="text-2 mb-0">
+                            <a href="<?= base_url('pengumuman/' . $pgm['tulisan_slug']) ?>"><i class="fab fa-facebook-f"></i><span>Baca</span></a>
+                        </span> -->
                     </span>
                 </span>
             </div>
@@ -272,7 +275,7 @@
 						</div> -->
     </div>
 </div>
-<section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0">
+<!-- <section class="section bg-color-grey-scale-1 section-height-3 border-0 m-0">
     <div class="container pb-2">
         <div class="row">
             <div class="col-lg-6 text-center text-md-start mb-5 mb-lg-0">
@@ -323,5 +326,5 @@
             </div>
         </div>
     </div>
-</section>
-</div>
+</section> -->
+<!-- </div> -->

@@ -108,7 +108,27 @@ $jum_pesan = $query->num_rows();
                 </div>
                 <div class="col-md-6">
                   <label>Email</label>
-                  <input type="text" name="email" class="form-control" value="<?= $data['email'] ?>" placeholder="" />
+                  <input type="email" name="email" class="form-control" value="<?= $data['email'] ?>" placeholder="" />
+                </div>
+                <div class="col-md-6">
+                  <label>Facebook</label>
+                  <input type="text" placeholder="contoh : https://m.facebook.com/profile.php?id=113094176771018" name="sos_fb" class="form-control" value="<?= $data['sos_fb'] ?>" placeholder="" />
+                </div>
+                <div class="col-md-6">
+                  <label>Twitter</label>
+                  <input type="text" name="sos_twiter" class="form-control" value="<?= $data['sos_twiter'] ?>" placeholder="" />
+                </div>
+                <div class="col-md-6">
+                  <label>Instagram</label>
+                  <input type="text" name="sos_ig" class="form-control" value="<?= $data['sos_ig'] ?>" placeholder="" />
+                </div>
+                <div class="col-md-6">
+                  <label>Youtube</label>
+                  <input type="text" name="sos_yt" class="form-control" value="<?= $data['sos_yt'] ?>" placeholder="" />
+                </div>
+                <div class="col-md-6">
+                  <label>Linked In</label>
+                  <input type="text" name="sos_linkedin" class="form-control" value="<?= $data['sos_linkedin'] ?>" placeholder="" />
                 </div>
                 <div class="col-md-6">
                   <label>Kata Sambutan</label>

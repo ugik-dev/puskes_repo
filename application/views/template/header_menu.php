@@ -51,7 +51,7 @@
 									</div>
 									<div class="header-extra-info-text">
 										<label>Kirim EMAIL</label>
-										<strong><a href="mailto:mail@example.com" class="text-decoration-none text-color-hover-primary"><?= $profil->email ?></a></strong>
+										<strong><a href="mailto:<?= $profil->email ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->email ?></a></strong>
 									</div>
 								</li>
 								<li>
@@ -59,8 +59,17 @@
 										<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
 									</div>
 									<div class="header-extra-info-text">
-										<label>HUBUNGI SEKARANG</label>
-										<strong><a href="tel:8001234567" class="text-decoration-none text-color-hover-primary"><?= $profil->no_telp ?></a></strong>
+										<label>HUBUNGI TELEPON</label>
+										<strong><a href="tel:<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_telp))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_telp ?></a></strong>
+									</div>
+								</li>
+								<li>
+									<div class="header-extra-info-icon">
+										<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
+									</div>
+									<div class="header-extra-info-text">
+										<label>HUBUNGI WHATSAPP</label>
+										<strong><a href="https://wa.me/<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_wa))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_wa ?></a></strong>
 									</div>
 								</li>
 							</ul>

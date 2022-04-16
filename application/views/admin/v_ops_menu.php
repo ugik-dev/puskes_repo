@@ -108,7 +108,7 @@ $jum_pesan = $query->num_rows();
                           <td><?php echo  $i['kategori']; ?></td>
                           <td><?php echo  $i['nama_menu']; ?></td>
                           <td><?php echo  $i['slug']; ?></td>
-                          <td><?php echo  $i['status'] == 1 ? 'aktif' : 'non aktif'; ?></td>
+                          <td><?php echo  $i['status'] == '1' ? 'aktif' : 'non aktif'; ?></td>
                           <td style="text-align:right;">
                             <a class="btn" href="<?php echo base_url() . 'admin/menu/get_edit/' . $i['id_menu']; ?>"><span class="fa fa-pencil"></span></a>
                             <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $i['id_menu']; ?>"><span class="fa fa-trash"></span></a>
