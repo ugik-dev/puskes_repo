@@ -1,6 +1,9 @@
 /application/config/database.php
 /upload/images/*
+!/upload/images/def_logo.png
+!/upload/images/stay.png
 /upload/files/*
+!/upload/files/stay.png
 /assets/captcha/*
 /.htaccess
 /cgi-bin
