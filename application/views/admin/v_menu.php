@@ -51,14 +51,14 @@
          </ul>
        </li>
 
-       <li>
+       <!-- <li>
          <a href="<?php echo base_url() . 'admin/program' ?>">
            <i class="fa fa-list"></i> <span>List Program Unggulan</span>
            <span class="pull-right-container">
              <small class="label pull-right"></small>
            </span>
          </a>
-       </li>
+       </li> -->
        <li>
          <a href="<?php echo base_url() . 'admin/pengguna' ?>">
            <i class="fa fa-users"></i> <span>Pengguna</span>
@@ -75,7 +75,7 @@
            </span>
          </a>
        </li>
-       <li>
+       <!-- <li>
          <a href="<?php echo base_url() . 'admin/agenda' ?>">
            <i class="fa fa-calendar"></i> <span>Agenda</span>
            <span class="pull-right-container">
@@ -90,7 +90,7 @@
              <small class="label pull-right"></small>
            </span>
          </a>
-       </li>
+       </li> -->
        <li>
          <a href="<?php echo base_url() . 'admin/files' ?>">
            <i class="fa fa-download"></i> <span>Bank Data</span>
@@ -99,14 +99,14 @@
            </span>
          </a>
        </li>
-       <li>
+       <!-- <li>
          <a href="<?php echo base_url() . 'admin/loker' ?>">
            <i class="fa fa-download"></i> <span>Lowongan Kerja</span>
            <span class="pull-right-container">
              <small class="label pull-right"></small>
            </span>
          </a>
-       </li>
+       </li> -->
        <li class="treeview">
          <a href="#">
            <i class="fa fa-camera"></i>

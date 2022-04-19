@@ -66,6 +66,7 @@ $route['berita/(:any)'] = 'berita/detail/Berita/$1';
 
 $route['pengumuman'] = 'berita/index/Pengumuman';
 $route['pengumuman/(:any)'] = 'berita/detail/Pengumuman/$1';
+$route['search'] = 'berita/search';
 
 $route['agenda'] = 'berita/index/Agenda';
 $route['agenda/(:any)'] = 'berita/detail/Agenda/$1';

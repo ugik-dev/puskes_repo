@@ -40,11 +40,12 @@ class Menu extends CI_Controller
 
     function galeri()
     {
-        $data = $this->m_menu->get_pegawai();
+        $data = $this->m_menu->get_galeri();
         $dataContent = array(
-            'pageContent' => 'page/pg_bank_data',
+            'pageContent' => 'page/pg_galeri',
             'dataContent' => $data
         );
+        // echo json_encode($data);
         $this->load->view('template/main', $dataContent);
     }
 }

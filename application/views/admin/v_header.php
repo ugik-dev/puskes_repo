@@ -2,6 +2,8 @@
 <?php
 $query = $this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
 $jum_pesan = $query->num_rows();
+$profil = getProfil();
+
 ?>
 <header class="main-header">
 
@@ -10,7 +12,7 @@ $jum_pesan = $query->num_rows();
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini">PSLT</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg">PKM Sungailiat</span>
+    <span class="logo-lg"><?= $profil->nama_puskesmas ?> </span>
   </a>
 
   <!-- Header Navbar: style can be found in header.less -->

@@ -45,33 +45,39 @@
 					<div class="header-column justify-content-end">
 						<div class="header-row">
 							<ul class="header-extra-info d-flex align-items-center">
-								<li class="d-none d-sm-inline-flex">
-									<div class="header-extra-info-icon">
-										<i class="far fa-envelope text-color-primary text-4 position-relative bottom-2"></i>
-									</div>
-									<div class="header-extra-info-text">
-										<label>Kirim EMAIL</label>
-										<strong><a href="mailto:<?= $profil->email ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->email ?></a></strong>
-									</div>
-								</li>
-								<li>
-									<div class="header-extra-info-icon">
-										<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
-									</div>
-									<div class="header-extra-info-text">
-										<label>HUBUNGI TELEPON</label>
-										<strong><a href="tel:<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_telp))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_telp ?></a></strong>
-									</div>
-								</li>
-								<li>
-									<div class="header-extra-info-icon">
-										<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
-									</div>
-									<div class="header-extra-info-text">
-										<label>HUBUNGI WHATSAPP</label>
-										<strong><a href="https://wa.me/<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_wa))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_wa ?></a></strong>
-									</div>
-								</li>
+								<?php if (!empty($profil->email)) { ?>
+									<li class="d-none d-sm-inline-flex">
+										<div class="header-extra-info-icon">
+											<i class="far fa-envelope text-color-primary text-4 position-relative bottom-2"></i>
+										</div>
+										<div class="header-extra-info-text">
+											<label>Kirim EMAIL</label>
+											<strong><a href="mailto:<?= $profil->email ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->email ?></a></strong>
+										</div>
+									</li>
+								<?php }	?>
+								<?php if (!empty($profil->no_telp)) { ?>
+									<li>
+										<div class="header-extra-info-icon">
+											<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
+										</div>
+										<div class="header-extra-info-text">
+											<label>HUBUNGI TELEPON</label>
+											<strong><a href="tel:<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_telp))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_telp ?></a></strong>
+										</div>
+									</li>
+								<?php }	?>
+								<?php if (!empty($profil->no_wa)) { ?>
+									<li>
+										<div class="header-extra-info-icon">
+											<i class="fab fa-whatsapp text-color-primary text-4 position-relative bottom-1"></i>
+										</div>
+										<div class="header-extra-info-text">
+											<label>HUBUNGI WHATSAPP</label>
+											<strong><a href="https://wa.me/<?= str_replace('+', '', str_replace('-', '', str_replace(' ', '', $profil->no_wa))) ?>" class="text-decoration-none text-color-hover-primary"><?= $profil->no_wa ?></a></strong>
+										</div>
+									</li>
+								<?php }	?>
 							</ul>
 						</div>
 					</div>

@@ -12,7 +12,7 @@ $jum_pesan = $query->num_rows();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script language="JavaScript">
-    var txt = "Program Unggulan | Puskesmas Sungailiat ";
+    var txt = "Program Unggulan | <?= $profil->nama_puskesmas ?>   ";
     var kecepatan = 450;
     var segarkan = null;
 

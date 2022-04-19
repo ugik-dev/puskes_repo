@@ -9,10 +9,10 @@
                     <div class="owl-item position-relative" style="filter: brightness(<?= $hc['dark_effect'] ?>%);background-image: url(<?= base_url('upload/images/' . $hc['header_image']) ?>); background-size: cover; background-position: center;">
                         <div class="container position-relative z-index-1 h-100">
                             <div class="row align-items-center h-100">
-                                <div class="col-lg-6 text-center">
+                                <div class="col-lg-12 text-center">
                                     <div class="d-flex flex-column align-items-center justify-content-center h-100">
                                         <?php if (!empty($hc['h1'])) { ?>
-                                            <h3 class="position-relative text-color-dark text-5 line-height-5 font-weight-medium ls-0 px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
+                                            <h3 style="color: <?= $hc['c1'] ?>" class="position-relative text-5 line-height-5 font-weight-medium ls-0 px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
                                                 <span class="position-absolute right-100pct top-50pct transform3dy-n50">
                                                     <img src="<?= base_url('assets/') ?>img/slides/slide-title-border-light.png" class="w-auto appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
                                                 </span>
@@ -25,8 +25,8 @@
                                             </h3>
                                         <?php } ?>
 
-                                        <h1 class="text-color-dark font-weight-extra-bold text-12-5 line-height-1 mb-2 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}"> <?= $hc['h2'] ?> </h1>
-                                        <p class="text-4-5 text-color-dark font-weight-light mb-0" data-plugin-animated-letters data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0}"> <?= $hc['h3'] ?> </p>
+                                        <h1 style="color: <?= $hc['c2'] ?>" class="font-weight-extra-bold text-12-5 line-height-1 mb-2 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}"> <?= $hc['h2'] ?> </h1>
+                                        <p style="color: <?= $hc['c3'] ?>" class="text-4-5 font-weight-light mb-0" data-plugin-animated-letters data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0}"> <?= $hc['h3'] ?> </p>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
             <h2 class="text-color-dark font-weight-normal text-6 mb-2">Galeri <strong class="font-weight-extra-bold"><?= $profil->nama_puskesmas ?></strong></h2>
             <!-- <p class="lead pe-lg-5 me-lg-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc. </p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget</p> -->
-            <a href="#" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Lihat Lainnya</a>
+            <a href="<?= base_url('galeri') ?>" class="btn btn-dark font-weight-semibold btn-px-4 btn-py-2 text-2">Lihat Lainnya</a>
         </div>
         <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 position-relative mt-sm-5" style="top: 1.7rem;">
             <?php if (!empty($galeri[0])) {
@@ -245,10 +245,6 @@
                         <span class="thumb-info-caption-text pt-1 mb-0 pb-0"> <?php echo strip_tags($pgm['tulisan_isi']); ?>...
                             <a href="<?= base_url('pengumuman/' . $pgm['tulisan_slug']) ?>" class="read-more font-weight-semibold text-2 mt-0 pt-0">read more <i class="fas fa-chevron-right text-1 ms-1"></i></a>
                         </span>
-
-                        <!-- <span class="text-2 mb-0">
-                            <a href="<?= base_url('pengumuman/' . $pgm['tulisan_slug']) ?>"><i class="fab fa-facebook-f"></i><span>Baca</span></a>
-                        </span> -->
                     </span>
                 </span>
             </div>

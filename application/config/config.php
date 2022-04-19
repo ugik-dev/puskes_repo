@@ -23,7 +23,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'https://sungailiat.puskesmas.bangka.go.id';
 $config['base_url'] = 'http';
 if (@$_SERVER["HTTPS"] == "on") {
     $config['base_url'] .= "s";

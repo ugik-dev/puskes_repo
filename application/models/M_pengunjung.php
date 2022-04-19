@@ -87,4 +87,3 @@ class M_pengunjung extends CI_Model{
     }
 
 }
-?>

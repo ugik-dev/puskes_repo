@@ -4,6 +4,7 @@ $query = $this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
 $query2 = $this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
 $jum_comment = $query2->num_rows();
 $jum_pesan = $query->num_rows();
+$profil = getProfil();
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@ $jum_pesan = $query->num_rows();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script language="JavaScript">
-    var txt = "Komentar | Puskesmas Sungailiat ";
+    var txt = "Komentar | <?= $profil->nama_puskesmas ?>  ";
     var kecepatan = 450;
     var segarkan = null;
 
@@ -96,7 +97,7 @@ $jum_pesan = $query->num_rows();
                         <tr>
                           <td><?php echo $row->komentar_nama; ?></td>
                           <td><?php echo $row->komentar_isi; ?></td>
-                          <td><a href="<?php echo site_url('artikel/' . $row->tulisan_slug); ?>" target="_blank"><?php echo $row->tulisan_judul; ?></a></td>
+                          <td><a href="<?php echo site_url(strtolower($row->tulisan_jenis) . '/' . $row->tulisan_slug); ?>" target="_blank"><?php echo $row->tulisan_judul; ?></a></td>
                           <td><?php echo date("d M Y H:i", strtotime($row->komentar_tanggal)); ?></td>
                           <td style="text-align:right;">
                             <?php if ($row->komentar_status == '1' && $row->komentar_parent == '0') : ?>

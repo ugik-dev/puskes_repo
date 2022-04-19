@@ -43,7 +43,8 @@
 							<h2 class="font-weight-semi-bold"><a href="#"><?= $dataContent['tulisan_judul'] ?></a></h2>
 							<div class="post-meta">
 								<span><i class="far fa-user"></i> By <a href="#"><?= $dataContent['tulisan_author'] ?></a> </span>
-								<!-- <span><i class="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Design</a> </span> -->
+								<span><i class="far fa-eye"></i> Dilihat <a href="#"> <?= $dataContent['tulisan_views'] ?></a> </span>
+								<span><i class="far fa-folder"></i> <a href="#"><?= $dataContent['tulisan_kategori_nama'] ?></a>, <a href="#"><?= $dataContent['tulisan_jenis'] ?></a> </span>
 								<!-- <span><i class="far fa-comments"></i> <a href="#">12 Comments</a></span> -->
 							</div>
 							<div class="blog-posts">
@@ -52,7 +53,7 @@
 							<div class="post-block mt-5 post-share">
 								<h4 class="mb-3">Bagian Postingan Ini</h4>
 
-								<div class="addthis_inline_share_toolbox" data-url="<?= base_url('berita/' . $dataContent['tulisan_slug']) ?>" data-title="<?= $dataContent['tulisan_judul'] ?>" style="clear: both;">
+								<div class="addthis_inline_share_toolbox" data-url="<?= base_url(strtolower($dataContent['tulisan_jenis']) . '/' . $dataContent['tulisan_slug']) ?>" data-title="<?= $dataContent['tulisan_judul'] ?>" style="clear: both;">
 									<div id="atstbx" class="at-resp-share-element at-style-responsive at-mobile addthis-smartlayers addthis-animated at4-show" aria-labelledby="at-9d0aa2ee-9d55-45d3-b4e5-82dfce1deabe" role="region"><span id="at-9d0aa2ee-9d55-45d3-b4e5-82dfce1deabe" class="at4-visually-hidden">AddThis Sharing Buttons</span>
 										<div class="at-share-btn-elements"><a role="button" tabindex="0" class="at-icon-wrapper at-share-btn at-svc-whatsapp" style="background-color: rgb(77, 194, 71); border-radius: 0px;"><span class="at4-visually-hidden">Share to WhatsApp</span><span class="at-icon-wrapper" style="line-height: 32px; height: 32px; width: 32px;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" version="1.1" role="img" aria-labelledby="at-svg-whatsapp-5" class="at-icon at-icon-whatsapp" style="fill: rgb(255, 255, 255); width: 32px; height: 32px;">
 														<title id="at-svg-whatsapp-5">WhatsApp</title>
@@ -113,6 +114,7 @@
 												<label class="form-label required font-weight-bold text-dark">Nama Lengkap</label>
 												<input name="id" type="hidden" value="<?= $dataContent['tulisan_id'] ?>">
 												<input name="slug" type="hidden" value="<?= $dataContent['tulisan_slug'] ?>">
+												<input name="jenis" type="hidden" value="<?= $dataContent['tulisan_jenis'] ?>">
 												<input type="text" name="nama" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" required="">
 											</div>
 											<div class="form-group col-lg-6">

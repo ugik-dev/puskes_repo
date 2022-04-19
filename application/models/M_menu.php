@@ -34,6 +34,17 @@ class M_menu extends CI_Model
         return $obj_res;
     }
 
+    function get_galeri($filter = [])
+    {
+        $this->db->select('*');
+
+        $this->db->from('tbl_galeri');
+        $query = $this->db->get();
+        $obj_res =  $query->result_array();
+        return $obj_res;
+    }
+
+
     function get_bank_data($filter = [])
     {
         $this->db->select('*');

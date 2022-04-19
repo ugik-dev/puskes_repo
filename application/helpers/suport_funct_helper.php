@@ -32,6 +32,31 @@ if (!function_exists('getMenu')) {
     }
 }
 
+if (!function_exists('getAsside')) {
+    function getAsside()
+    {
+        $CI    = &get_instance();
+        $CI->load->database();
+        $CI->db->select('tulisan_judul, tulisan_slug , tulisan_jenis, tulisan_gambar');
+        $CI->db->from('tbl_tulisan');
+        $CI->db->order_by('tulisan_views', 'DESC');
+        $CI->db->limit('5');
+        $query = $CI->db->get();
+        $res['top_view'] =  $query->result_array();
+
+
+        $CI    = &get_instance();
+        $CI->load->database();
+        $CI->db->select('tulisan_judul, tulisan_slug , tulisan_jenis, tulisan_gambar');
+        $CI->db->from('tbl_tulisan');
+        $CI->db->order_by('tulisan_tanggal');
+        $CI->db->limit('5');
+        $query = $CI->db->get();
+        $res['top_new'] =  $query->result_array();
+        return $res;
+    }
+}
+
 if (!function_exists('getHeader')) {
     function getHeader()
     {

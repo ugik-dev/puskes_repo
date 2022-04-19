@@ -29,7 +29,7 @@ class M_pengaturan extends CI_Model
     public function add_header($data)
     {
         // $this->db->where('id', '1');
-        $this->db->insert('header', DataStructure::slice($data, ['posisi', 'h1', 'h2', 'h3', 'header_image', 'dark_effect'], FALSE));
+        $this->db->insert('header', DataStructure::slice($data, ['posisi', 'h1', 'h2', 'h3', 'c1', 'c2', 'c3', 'header_image', 'dark_effect'], FALSE));
         ExceptionHandler::handleDBError($this->db->error(), "Edit Product gagal", "beader");
 
         // return $data['id_product'];
@@ -38,7 +38,7 @@ class M_pengaturan extends CI_Model
     public function update_header($data)
     {
         $this->db->where('id_header', $data['id_header']);
-        $this->db->update('header', DataStructure::slice($data, ['posisi', 'h1', 'h2', 'h3', 'header_image', 'dark_effect'], FALSE));
+        $this->db->update('header', DataStructure::slice($data, ['posisi', 'h1', 'h2', 'h3', 'c1', 'c2', 'c3', 'header_image', 'dark_effect'], FALSE));
         ExceptionHandler::handleDBError($this->db->error(), "Edit Product gagal", "header");
 
         // return $data['id_product'];

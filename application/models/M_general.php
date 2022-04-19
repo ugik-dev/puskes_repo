@@ -25,7 +25,9 @@ class M_general extends CI_Model
         if (!empty($filter['jenis'])) {
             $this->db->where('tulisan_jenis', $filter['jenis']);
         }
-
+        if (!empty($filter['key'])) {
+            $this->db->where('tulisan_isi like "%' . $filter['key'] . '%" OR tulisan_judul like "%' . $filter['key'] . '%" ');
+        }
         if (!empty($filter['tulisan_slug'])) {
             $this->db->where('tulisan_slug', $filter['tulisan_slug']);
         }
@@ -44,6 +46,9 @@ class M_general extends CI_Model
         if (!empty($filter['jenis'])) {
             $this->db->where('tulisan_jenis', $filter['jenis']);
         }
+        if (!empty($filter['key'])) {
+            $this->db->where('tulisan_isi like "%' . $filter['key'] . '%" ');
+        }
         $query = $this->db->get();
         $obj_res =  $query->result_array()[0]['pg'];
         return $obj_res;
@@ -58,6 +63,8 @@ class M_general extends CI_Model
         if (!empty($filter['komentar_tulisan_id'])) {
             $this->db->where('komentar_tulisan_id', $filter['komentar_tulisan_id']);
         }
+
+        $this->db->where('komentar_status', 1);
         $query = $this->db->get();
         $obj_res =  $query->result_array();
         return $obj_res;

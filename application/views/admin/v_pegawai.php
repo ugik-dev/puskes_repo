@@ -4,6 +4,8 @@ $query = $this->db->query("SELECT * FROM tbl_inbox WHERE inbox_status='1'");
 $query2 = $this->db->query("SELECT * FROM tbl_komentar WHERE komentar_status='0'");
 $jum_comment = $query2->num_rows();
 $jum_pesan = $query->num_rows();
+$profil = getProfil();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,7 @@ $jum_pesan = $query->num_rows();
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <script language="JavaScript">
-    var txt = "Data Pegawai | Puskesmas Sungailiat";
+    var txt = "Data Pegawai | <?= $profil->nama_puskesmas ?>  ";
     var kecepatan = 450;
     var segarkan = null;
 
@@ -399,7 +401,7 @@ $jum_pesan = $query->num_rows();
             <div class="form-group">
               <label for="inputUserName" class="col-sm-4 control-label">Jabatan</label>
               <div class="col-sm-7">
-                <input type="text" name="xmapel" class="form-control" id="inputUserName" placeholder="Contoh: Kepala Puskesmas Sungailiat" required>
+                <input type="text" name="xmapel" class="form-control" id="inputUserName" placeholder="Contoh: Kepala <?= $profil->nama_puskesmas ?>  " required>
               </div>
             </div>
 
@@ -501,7 +503,7 @@ $jum_pesan = $query->num_rows();
               <div class="form-group">
                 <label for="inputUserName" class="col-sm-4 control-label">Jabatan</label>
                 <div class="col-sm-7">
-                  <input type="text" name="xmapel" value="<?php echo $mapel; ?>" class="form-control" id="inputUserName" placeholder="Contoh: Kepala Puskesmas Sungailiat" required>
+                  <input type="text" name="xmapel" value="<?php echo $mapel; ?>" class="form-control" id="inputUserName" placeholder="Contoh: Kepala <?= $profil->nama_puskesmas ?>  " required>
                 </div>
               </div>
 

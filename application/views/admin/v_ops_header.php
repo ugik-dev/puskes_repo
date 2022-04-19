@@ -342,25 +342,41 @@ $jum_pesan = $query->num_rows();
                             <div class="col-sm-7">
                                 <input type="text" name="posisi" class="form-control" id="posisi" placeholder="ex. 2" required>
                             </div>
-                        </div>
 
+                        </div>
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Text 1</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Tingkat Kecerahan (1-100)</label>
                             <div class="col-sm-7">
-                                <input type="text" name="h1" class="form-control" id="h1" placeholder="ex. Puskesmas Sungailiat">
+                                <input type="text" name="dark_effect" value="" class="form-control" id="posisi" placeholder="1-100">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Text 2</label>
+                            <label for="inputUserName" class="col-sm-2 control-label">Text 1</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="h1" class="form-control" id="h1" placeholder="ex. <?= $profil->nama_puskesmas ?>  ">
+                            </div>
+                            <div class="col-sm-2 mr-0">
+                                <input type="color" name="c1" class="form-control" id="c1" placeholder="">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-2 control-label">Text 2</label>
                             <div class="col-sm-7">
                                 <input type="text" name="h2" class="form-control" id="h2" placeholder="ex. Membangun bersama masyarakat babel">
                             </div>
+                            <div class="col-sm-2 mr-0">
+                                <input type="color" name="c2" class="form-control" id="c2" placeholder="">
+                            </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Text 3</label>
+                            <label for="inputUserName" class="col-sm-2 control-label">Text 3</label>
                             <div class="col-sm-7">
                                 <input type="text" name="h3" class="form-control" id="h3" placeholder="ex. Ayo hidup sehat">
+                            </div>
+                            <div class="col-sm-2 mr-0">
+                                <input type="color" name="c3" class="form-control" id="c3" placeholder="">
                             </div>
                         </div>
 
@@ -410,22 +426,31 @@ $jum_pesan = $query->num_rows();
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Text 1</label>
+                                <label for="inputUserName" class="col-sm-2 control-label">Text 1</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="h1" value="<?php echo $i['h1']; ?>" class="form-control" id="h1" placeholder="ex. Puskesmas Sungailiat">
+                                    <input type="text" name="h1" value="<?php echo $i['h1']; ?>" class="form-control" id="h1" placeholder="ex. <?= $profil->nama_puskesmas ?>  ">
+                                </div>
+                                <div class="col-sm-2 mr-0">
+                                    <input type="color" name="c1" class="form-control" id="c1" value="<?= $i['c1'] ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Text 2</label>
+                                <label for="inputUserName" class="col-sm-2 control-label">Text 2</label>
                                 <div class="col-sm-7">
                                     <input type="text" name="h2" class="form-control" value="<?php echo $i['h2']; ?>" id="h2" placeholder="ex. Membangun bersama masyarakat babel">
+                                </div>
+                                <div class="col-sm-2 mr-0">
+                                    <input type="color" name="c2" class="form-control" id="c2" value="<?= $i['c2'] ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Text 3</label>
+                                <label for="inputUserName" class="col-sm-2 control-label">Text 3</label>
                                 <div class="col-sm-7">
                                     <input type="text" name="h3" class="form-control" value="<?php echo $i['h3']; ?>" id="h3" placeholder="ex. Ayo hidup sehat">
+                                </div>
+                                <div class="col-sm-2 mr-0">
+                                    <input type="color" name="c3" class="form-control" id="c3" value="<?= $i['c3'] ?>">
                                 </div>
                             </div>
 
