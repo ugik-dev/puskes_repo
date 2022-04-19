@@ -10,6 +10,7 @@
 						<h5 class="text-5 text-transform-none font-weight-semibold text-color-light mb-4">Link Terkait</h5>
 						<p class="text-4 mb-0 text-color-light"> <a href="https://dinkes.bangka.go.id/" target="_blank" class="text-decoration-none text-color-light">Dinas Kesehatan Kabupaten</a> </p>
 						<p class="text-4 mb-0 text-color-light"> <a href="https://sungailiat.puskesmas.bangka.go.id/" target="_blank" class="text-decoration-none text-color-light">Puskesmas Sungailiat</a> </p>
+						<p class="text-4 mb-0 text-color-light"> <a href="https://bakam.puskesmas.bangka.go.id" target="_blank" class="text-decoration-none text-color-light">Puskesmas Bakam</a></p>
 						<p class="text-4 mb-0 text-color-light"> <a href="https://sinarbaru.puskesmas.bangka.go.id" target="_blank" class="text-decoration-none text-color-light">Puskesmas Sinar Baru</a></p>
 						<p class="text-4 mb-0 text-color-light"> <a href="https://belinyu.puskesmas.bangka.go.id" target="_blank" class="text-decoration-none text-color-light">Puskesmas Belinyu</a></p>
 						<p class="text-4 mb-0 text-color-light"> <a href="https://gunungmuda.puskesmas.bangka.go.id" target="_blank" class="text-decoration-none text-color-light">Puskesmas Gunung Muda</a></p>
