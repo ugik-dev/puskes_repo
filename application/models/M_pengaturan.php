@@ -20,7 +20,7 @@ class M_pengaturan extends CI_Model
     public function update_profil($data)
     {
         $this->db->where('id', '1');
-        $this->db->update('profil', DataStructure::slice($data, ['nama_puskesmas', 'no_telp', 'alamat', 'no_wa', 'email', 'logo', 'kata_sambutan', 'kapus_img', 'sos_yt', 'sos_fb', 'sos_ig', 'sos_linkedin', 'sos_twiter'], TRUE));
+        $this->db->update('profil', DataStructure::slice($data, ['nama_puskesmas', 'no_telp', 'alamat', 'no_wa', 'email', 'logo', 'kata_sambutan', 'kapus_img', 'sos_yt', 'sos_fb', 'sos_ig', 'sos_linkedin', 'sos_twiter'], FALSE));
         ExceptionHandler::handleDBError($this->db->error(), "Edit Product gagal", "profil");
 
         // return $data['id_product'];

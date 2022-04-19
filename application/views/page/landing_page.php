@@ -52,7 +52,7 @@
             if ($ihc > 1)
                 foreach ($header_corausel as $hc) {
                     if ($i == 1) echo '<button role="button" class="owl-dot active"><span></span></button>';
-                    else echo '<button role="button" class="owl-dot"><span></span></button>';
+                    else echo '<button role="button" class="owl-dot active"><span></span></button>';
                     $i++;
                 } ?>
 
