@@ -77,6 +77,7 @@ $db['local'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
+	// 'port' => '85',
 	'password' => '',
 	'database' => 'pkm_sliat',
 	'dbdriver' => 'mysqli',
