@@ -52,6 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['administrator'] = 'admin/login';
 $route['admin'] = 'admin/login';
+$route['e-survey'] = 'menu/esurvey';
 $route['profil/(:any)'] = 'menu/index/profil/$1';
 $route['informasi/(:any)'] = 'menu/index/informasi/$1';
 $route['pelayanan/(:any)'] = 'menu/index/pelayanan/$1';

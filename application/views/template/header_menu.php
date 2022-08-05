@@ -150,6 +150,7 @@
 																echo '<li><a class="dropdown-item" href="' . base_url('pelayanan/') . $prl['slug'] . '">' . $prl['nama_menu'] . '</a></li>';
 															}
 															?>
+															<li><a class="dropdown-item" href="<?= base_url('e-survey') ?>">e-Survey</a></li>
 														</ul>
 													</li>
 												<?php
