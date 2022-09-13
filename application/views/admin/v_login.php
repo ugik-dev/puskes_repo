@@ -35,14 +35,14 @@
               <input type="password" name="password" id="password" value="" class="form-control form-control-lg text-4 is-valid valid" required="" aria-invalid="false">
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="form-group col">
-              <?= $captcha_img ?> &nbsp;<a href="#" onclick="parent.window.location.reload(true)">[perbarui gambar]</a>
-              <!-- <label class="form-label text-color-dark text-3">Password <span class="text-color-danger"></span></label> -->
-              <!-- <input type="password" name="password" id="password" value="" class="form-control form-control-lg text-4 is-valid valid" required="" aria-invalid="false"> -->
+              <?php
+              //  $captcha_img 
+              ?> &nbsp;<a href="#" onclick="parent.window.location.reload(true)">[perbarui gambar]</a>
               <input type="text" name="input_captcha" class="form-control form-control text-2" required>
             </div>
-          </div>
+          </div> -->
 
 
           <div class="row justify-content-between">
