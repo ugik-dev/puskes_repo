@@ -18,21 +18,9 @@ class Home extends CI_Controller
 
 	function index()
 	{
-		// $x['berita'] = $this->m_tulisan->get_berita_home();
-		// $x['program'] = $this->m_program->get_program_home();
-		// $x['pengumuman'] = $this->m_pengumuman->get_pengumuman_home();
-		// $x['loker'] = $this->m_loker->get_loker_home();
-		// $x['agenda'] = $this->m_agenda->get_agenda_home();
-		// $x['tot_pegawai'] = $this->db->get('tbl_pegawai')->num_rows();
-		// echo json_encode($data);
-		// die();
-		// $data['pengumuman'] = $this->M_general->get_pengumuman(array('limit' => 3));
 		$data['pengumuman'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'Pengumuman'));
 		$data['berita'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'Berita'));
 		$data['galeri'] = $this->M_general->get_galeri(array('limit' => 3));
-		// $x['tot_files'] = $this->db->get('tbl_files')->num_rows();
-		// $x['tot_agenda'] = $this->db->get('tbl_agenda')->num_rows();
-		// $this->load->view('depan/v_home', $x);
 		$dataContent = array(
 			'pageContent' => 'page/landing_page',
 			'dataContent' => $data

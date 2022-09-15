@@ -30,6 +30,7 @@
 						</div>
 					</div>
 				</div> -->
+
 			<div class="header-container container z-index-2">
 				<div class="header-row py-2">
 					<div class="header-column">
@@ -150,6 +151,7 @@
 																echo '<li><a class="dropdown-item" href="' . base_url('pelayanan/') . $prl['slug'] . '">' . $prl['nama_menu'] . '</a></li>';
 															}
 															?>
+															<li><a class="dropdown-item" href="<?= base_url('e-survey') ?>">e-Survey</a></li>
 														</ul>
 													</li>
 												<?php

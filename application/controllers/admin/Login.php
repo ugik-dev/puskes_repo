@@ -24,10 +24,17 @@ class Login extends CI_Controller
         // $word = array_merge(range('0', '9'), range('A', 'Z'));
         // $acak = shuffle($word);
         // $str  = substr(implode($word), 0, 5);
+<<<<<<< HEAD
         //Menyimpan huruf acak tersebut kedalam session
         // $data_ses = array('captcha_str' => $str);
         // $this->session->set_userdata($data_ses);
         //array untuk menampilkan gambar captcha
+=======
+        // //Menyimpan huruf acak tersebut kedalam session
+        // $data_ses = array('captcha_str' => $str);
+        // $this->session->set_userdata($data_ses);
+        // //array untuk menampilkan gambar captcha
+>>>>>>> f6545630ac1d9028c5eaac524f7cc8e71b6be285
         // $vals = array(
         //     'word'  => $str, //huruf acak yang telah dibuat diatas
         //     'img_path'  => $path, //path untuk menyimpan gambar captcha

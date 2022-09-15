@@ -6,6 +6,7 @@
 !/upload/files/stay.png
 /assets/captcha/*
 /.htaccess
+
 /cgi-bin
 /.well-known
 /assets/ckfinder/core/connector/php/assets/ckfinder/userfiles/*

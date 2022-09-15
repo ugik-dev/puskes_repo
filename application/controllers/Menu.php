@@ -38,6 +38,15 @@ class Menu extends CI_Controller
         $this->load->view('template/main', $dataContent);
     }
 
+    function esurvey()
+    {
+        $data = $this->m_menu->get_bank_data();
+        $dataContent = array(
+            'pageContent' => 'page/pg_survey',
+            'dataContent' => $data
+        );
+        $this->load->view('template/main', $dataContent);
+    }
     function galeri()
     {
         $data = $this->m_menu->get_galeri();
@@ -47,5 +56,15 @@ class Menu extends CI_Controller
         );
         // echo json_encode($data);
         $this->load->view('template/main', $dataContent);
+    }
+
+    function submit_survey()
+    {
+
+        $data = $this->input->post();
+        $data['ip_address'] = $this->input->ip_address();
+        $this->load->model('GeneralModel');
+        $this->GeneralModel->submit_survey($data);
+        echo json_encode(array('error' => false, 'data' => $data));
     }
 }
