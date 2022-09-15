@@ -12,38 +12,38 @@ class Login extends CI_Controller
         // echo json_encode($d);
         // die();
         //posisi folder untuk menyimpan gambar captcha
-        $path = './assets/captcha/';
+        // $path = './assets/captcha/';
 
         //membuat folder apabila folder captcha tidak ada
-        if (!file_exists($path)) {
-            $create = mkdir($path, 0777);
-            if (!$create)
-                return;
-        }
+        // if (!file_exists($path)) {
+        //     $create = mkdir($path, 0777);
+        //     if (!$create)
+        //         return;
+        // }
         //Menampilkan huruf acak untuk dijadikan captcha
-        $word = array_merge(range('0', '9'), range('A', 'Z'));
-        $acak = shuffle($word);
-        $str  = substr(implode($word), 0, 5);
+        // $word = array_merge(range('0', '9'), range('A', 'Z'));
+        // $acak = shuffle($word);
+        // $str  = substr(implode($word), 0, 5);
         //Menyimpan huruf acak tersebut kedalam session
-        $data_ses = array('captcha_str' => $str);
-        $this->session->set_userdata($data_ses);
+        // $data_ses = array('captcha_str' => $str);
+        // $this->session->set_userdata($data_ses);
         //array untuk menampilkan gambar captcha
-        $vals = array(
-            'word'  => $str, //huruf acak yang telah dibuat diatas
-            'img_path'  => $path, //path untuk menyimpan gambar captcha
-            'img_url'   => base_url() . 'assets/captcha/', //url untuk menampilkan gambar captcha
-            'img_width' => '150', //lebar gambar captcha
-            'img_height' => 40, //tinggi gambar captcha
-            'expiration' => 7200 //expired time per captcha
-        );
-        $cap = create_captcha($vals);
-        $data['captcha_image'] = $cap['image']; //variable array untuk menampilkan captcha pada view
+        // $vals = array(
+        //     'word'  => $str, //huruf acak yang telah dibuat diatas
+        //     'img_path'  => $path, //path untuk menyimpan gambar captcha
+        //     'img_url'   => base_url() . 'assets/captcha/', //url untuk menampilkan gambar captcha
+        //     'img_width' => '150', //lebar gambar captcha
+        //     'img_height' => 40, //tinggi gambar captcha
+        //     'expiration' => 7200 //expired time per captcha
+        // );
+        // $cap = create_captcha($vals);
+        // $data['captcha_image'] = $cap['image']; //variable array untuk menampilkan captcha pada view
         // echo  $data['captcha_image'];
         // die();
         // $this->load->view('admin/v_login', $data); //load view
         $dataContent = array(
             'pageContent' => 'admin/v_login',
-            'captcha_img' => $cap['image']
+            // 'captcha_img' => $cap['image']
         );
         $this->load->view('template/main', $dataContent);
     }
