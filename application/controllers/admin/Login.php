@@ -47,47 +47,39 @@ class Login extends CI_Controller
         );
         $this->load->view('template/main', $dataContent);
     }
+
     function auth()
     {
-        //cek apakah secure code yang diinputkan oleh User sudah benar atau belum.
-        // if ($this->input->post('input_captcha') != $this->session->userdata('captcha_str')) {
-        //     echo '
-        //         <script>
-        //             alert("Huruf Captcha yang Anda masukkan tidak sama. Silahkan coba sekali lagi");
-        //             window.location = "' . site_url() . 'administrator";
-        //         </script>
-        //     ';
-        // } else {
-        $username = strip_tags(str_replace("'", "", $this->input->post('username')));
-        $password = strip_tags(str_replace("'", "", $this->input->post('password')));
-        $u = $username;
-        $p = $password;
-        $cadmin = $this->m_login->cekadmin($u, $p);
+        echo 'auth';
+        // $username = strip_tags(str_replace("'", "", $this->input->post('username')));
+        // $password = strip_tags(str_replace("'", "", $this->input->post('password')));
+        // $u = $username;
+        // $p = $password;
+        // $cadmin = $this->m_login->cekadmin($u, $p);
 
-        if ($cadmin->num_rows() > 0) {
-            $this->session->set_userdata('masuk', true);
-            $this->session->set_userdata('user', $u);
-            $xcadmin = $cadmin->row_array();
-            if ($xcadmin['pengguna_level'] == '1') {
-                $this->session->set_userdata('akses', '1');
-                $idadmin = $xcadmin['pengguna_id'];
-                $user_nama = $xcadmin['pengguna_nama'];
-                $this->session->set_userdata('idadmin', $idadmin);
-                $this->session->set_userdata('nama', $user_nama);
-                redirect('admin/dashboard');
-            } else {
-                $this->session->set_userdata('akses', '2');
-                $idadmin = $xcadmin['pengguna_id'];
-                $user_nama = $xcadmin['pengguna_nama'];
-                $this->session->set_userdata('idadmin', $idadmin);
-                $this->session->set_userdata('nama', $user_nama);
-                header('admin/dashboard');
-            }
-        } else {
-        }
-        echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
-        redirect('admin/login');
+        // if ($cadmin->num_rows() > 0) {
+        //     $this->session->set_userdata('masuk', true);
+        //     $this->session->set_userdata('user', $u);
+        //     $xcadmin = $cadmin->row_array();
+        //     if ($xcadmin['pengguna_level'] == '1') {
+        //         $this->session->set_userdata('akses', '1');
+        //         $idadmin = $xcadmin['pengguna_id'];
+        //         $user_nama = $xcadmin['pengguna_nama'];
+        //         $this->session->set_userdata('idadmin', $idadmin);
+        //         $this->session->set_userdata('nama', $user_nama);
+        //         redirect('admin/dashboard');
+        //     } else {
+        //         $this->session->set_userdata('akses', '2');
+        //         $idadmin = $xcadmin['pengguna_id'];
+        //         $user_nama = $xcadmin['pengguna_nama'];
+        //         $this->session->set_userdata('idadmin', $idadmin);
+        //         $this->session->set_userdata('nama', $user_nama);
+        //         header('admin/dashboard');
+        //     }
+        // } else {
         // }
+        // echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
+        // redirect('admin/login');
     }
     function logout()
     {
