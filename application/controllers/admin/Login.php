@@ -58,34 +58,29 @@ class Login extends CI_Controller
         $cadmin = $this->m_login->cekadmin($u, $p);
 
         if ($cadmin->num_rows() > 0) {
-            // echo '1';
+            // echo '';
             $this->session->set_userdata('masuk', true);
             $this->session->set_userdata('user', $u);
             $xcadmin = $cadmin->row_array();
             if ($xcadmin['pengguna_level'] == '1') {
-                echo '2';
-                var_dump($this->session->userdata());
                 $this->session->set_userdata('akses', '1');
-                var_dump($this->session->userdata());
                 $idadmin = $xcadmin['pengguna_id'];
                 $user_nama = $xcadmin['pengguna_nama'];
                 $this->session->set_userdata('idadmin', $idadmin);
                 $this->session->set_userdata('nama', $user_nama);
-                // redirect('admin/dashboard');
+                redirect('admin/dashboard');
             } else {
-                // echo '3';
                 $this->session->set_userdata('akses', '2');
                 $idadmin = $xcadmin['pengguna_id'];
                 $user_nama = $xcadmin['pengguna_nama'];
                 $this->session->set_userdata('idadmin', $idadmin);
                 $this->session->set_userdata('nama', $user_nama);
-                // header('admin/dashboard');
+                header('admin/dashboard');
             }
         } else {
-            // echo '4';
+            echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
+            redirect('admin/login');
         }
-        echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
-        // redirect('admin/login');
     }
     function logout()
     {

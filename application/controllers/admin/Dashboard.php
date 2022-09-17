@@ -4,8 +4,6 @@ class Dashboard extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		var_dump($this->session->userdata());
-		die();
 		if ($this->session->userdata('masuk') != TRUE) {
 			$url = base_url('admin');
 			redirect($url);
@@ -14,11 +12,11 @@ class Dashboard extends CI_Controller
 	}
 	function index()
 	{
-		// if ($this->session->userdata('akses') == '1') {
-		$x['visitor'] = $this->m_pengunjung->statistik_pengujung();
-		$this->load->view('admin/v_dashboard', $x);
-		// } else {
-		// 	redirect('administrator');
-		// }
+		if ($this->session->userdata('akses') == '1') {
+			$x['visitor'] = $this->m_pengunjung->statistik_pengujung();
+			$this->load->view('admin/v_dashboard', $x);
+		} else {
+			redirect('admin');
+		}
 	}
 }
