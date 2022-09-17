@@ -84,9 +84,9 @@ class Login extends CI_Controller
                 header('admin/dashboard');
             }
         } else {
-            echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
-            redirect('admin/login');
         }
+        echo $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert"><span class="fa fa-close"></span></button> Username Atau Password Salah</div>');
+        redirect('admin/login');
         // }
     }
     function logout()
