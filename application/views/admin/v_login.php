@@ -22,7 +22,7 @@
         <!-- <h2 class="font-weight-bold text-5 mb-0">Login</h2> -->
         <p><?php echo $this->session->flashdata('msg'); ?></p>
 
-        <form action="<?php echo site_url() . 'admin/login/auth' ?>" method="post" id="frmSignIn" class="needs-validation" novalidate="novalidate">
+        <form action="<?php echo base_url() . 'admin/login/auth' ?>" method="post" id="frmSignIn" class="needs-validation" novalidate="novalidate">
           <div class="row">
             <div class="form-group col has-success">
               <label class="form-label text-color-dark text-3">Username <span class="text-color-danger"></span></label>
@@ -49,7 +49,7 @@
             <div class="form-group col-md-auto">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="rememberme">
-                <label class="form-label custom-control-label cur-pointer text-2" for="rememberme">Remember Me</label>
+                <label class="form-label custom-control-label cur-pointer text-2" for="rememberme">Me</label>
               </div>
             </div>
             <!-- <div class="form-group col-md-auto">
