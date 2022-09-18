@@ -56,7 +56,6 @@ class Tulisan extends CI_Controller
 			// $dum =	$this->upload->do_upload('filefoto');
 			// $tempfile = $_FILES['filefoto'];
 			// var_dump($tempfile->getTempName());
-			echo ini_get('upload_tmp_dir');
 			if ($this->upload->do_upload('filefoto')) {
 				$gbr = $this->upload->data();
 				//Compress Image
@@ -75,8 +74,9 @@ class Tulisan extends CI_Controller
 					$data['tulisan_gambar'] = $gbr['file_name'];
 				};
 			} else {
+				echo 'ini_get(upload_tmp_dir) :' . ini_get('upload_tmp_dir');
+				echo  '<br>sys_get_temp_dir()  : ' . sys_get_temp_dir() . '<br>';
 				$error = array('error' => $this->upload->display_errors());
-				echo  'sys_get_temp_dir()  = ' . sys_get_temp_dir() . '<br>';
 				var_dump($error);
 				// echo "Gagal Upload Gambar";
 			}
