@@ -72,6 +72,7 @@ class Tulisan extends CI_Controller
 				};
 			} else {
 				$error = array('error' => $this->upload->display_errors());
+				echo  'sys_get_temp_dir()  == ' . sys_get_temp_dir() . '<br><br>';
 				var_dump($error);
 				// echo "Gagal Upload Gambar";
 			}
