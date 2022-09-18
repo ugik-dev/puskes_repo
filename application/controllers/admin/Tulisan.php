@@ -56,6 +56,7 @@ class Tulisan extends CI_Controller
 			// $dum =	$this->upload->do_upload('filefoto');
 			// $tempfile = $_FILES['filefoto'];
 			// var_dump($tempfile->getTempName());
+			echo ini_get('upload_tmp_dir');
 			if ($this->upload->do_upload('filefoto')) {
 				$gbr = $this->upload->data();
 				//Compress Image
