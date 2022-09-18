@@ -15,7 +15,10 @@ class Home extends CI_Controller
 		$this->m_pengunjung->count_visitor();
 		$this->db->db_debug = FALSE;
 	}
-
+	function cek_pkp()
+	{
+		echo PHP_VERSION;
+	}
 	function index()
 	{
 		$data['pengumuman'] = $this->M_general->get_tulisan(array('limit' => 6, 'jenis' => 'Pengumuman'));
