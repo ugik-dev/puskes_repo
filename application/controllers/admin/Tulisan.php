@@ -56,28 +56,30 @@ class Tulisan extends CI_Controller
 			if ($this->upload->do_upload('filefoto')) {
 				$gbr = $this->upload->data();
 				//Compress Image
-				$config['image_library'] = 'gd2';
-				$config['source_image'] = './upload/images/' . $gbr['file_name'];
-				$config['create_thumb'] = FALSE;
-				$config['maintain_ratio'] = FALSE;
-				$config['quality'] = '60%';
-				$config['width'] = 710;
-				$config['height'] = 460;
-				$config['new_image'] = './upload/images/' . $gbr['file_name'];
-				$this->load->library('image_lib', $config);
-				$this->image_lib->resize();
+				// $config['image_library'] = 'gd2';
+				// $config['source_image'] = './upload/images/' . $gbr['file_name'];
+				// $config['create_thumb'] = FALSE;
+				// $config['maintain_ratio'] = FALSE;
+				// $config['quality'] = '60%';
+				// $config['width'] = 710;
+				// $config['height'] = 460;
+				// $config['new_image'] = './upload/images/' . $gbr['file_name'];
+				// $this->load->library('image_lib', $config);
+				// $this->image_lib->resize();
 
 				if (!empty($gbr['file_name'])) {
 					$data['tulisan_gambar'] = $gbr['file_name'];
 				};
+			} else {
+				echo "Gagal Upload Gambar";
 			}
 		} else {
 		}
-		$this->m_tulisan->add($data);
+		// $this->m_tulisan->add($data);
 
-		echo $this->session->set_flashdata('msg', 'info');
-		redirect('admin/tulisan');
-		$this->m_tulisan->add($data);
+		// echo $this->session->set_flashdata('msg', 'info');
+		// redirect('admin/tulisan');
+		// $this->m_tulisan->add($data);
 	}
 
 	function update_tulisan()
@@ -100,16 +102,16 @@ class Tulisan extends CI_Controller
 			if ($this->upload->do_upload('filefoto')) {
 				$gbr = $this->upload->data();
 				//Compress Image
-				$config['image_library'] = 'gd2';
-				$config['source_image'] = './upload/images/' . $gbr['file_name'];
-				$config['create_thumb'] = FALSE;
-				$config['maintain_ratio'] = FALSE;
-				$config['quality'] = '60%';
-				$config['width'] = 710;
-				$config['height'] = 460;
-				$config['new_image'] = './upload/images/' . $gbr['file_name'];
-				$this->load->library('image_lib', $config);
-				$this->image_lib->resize();
+				// $config['image_library'] = 'gd2';
+				// $config['source_image'] = './upload/images/' . $gbr['file_name'];
+				// $config['create_thumb'] = FALSE;
+				// $config['maintain_ratio'] = FALSE;
+				// $config['quality'] = '60%';
+				// $config['width'] = 710;
+				// $config['height'] = 460;
+				// $config['new_image'] = './upload/images/' . $gbr['file_name'];
+				// $this->load->library('image_lib', $config);
+				// $this->image_lib->resize();
 
 				if (!empty($gbr['file_name'])) {
 					$data['tulisan_gambar'] = $gbr['file_name'];
