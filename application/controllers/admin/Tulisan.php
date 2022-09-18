@@ -71,7 +71,9 @@ class Tulisan extends CI_Controller
 					$data['tulisan_gambar'] = $gbr['file_name'];
 				};
 			} else {
-				echo "Gagal Upload Gambar";
+				$error = array('error' => $this->upload->display_errors());
+				var_dump($error);
+				// echo "Gagal Upload Gambar";
 			}
 		} else {
 		}
