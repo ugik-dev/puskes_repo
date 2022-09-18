@@ -34,16 +34,16 @@ class Galeri extends CI_Controller
 			if ($this->upload->do_upload('filefoto')) {
 				$gbr = $this->upload->data();
 				//Compress Image
-				$config['image_library'] = 'gd2';
-				$config['source_image'] = './upload/images/' . $gbr['file_name'];
-				$config['create_thumb'] = FALSE;
-				$config['maintain_ratio'] = FALSE;
-				$config['quality'] = '60%';
-				$config['width'] = 500;
-				$config['height'] = 400;
-				$config['new_image'] = './upload/images/' . $gbr['file_name'];
-				$this->load->library('image_lib', $config);
-				$this->image_lib->resize();
+				// $config['image_library'] = 'gd2';
+				// $config['source_image'] = './upload/images/' . $gbr['file_name'];
+				// $config['create_thumb'] = FALSE;
+				// $config['maintain_ratio'] = FALSE;
+				// $config['quality'] = '60%';
+				// $config['width'] = 500;
+				// $config['height'] = 400;
+				// $config['new_image'] = './upload/images/' . $gbr['file_name'];
+				// $this->load->library('image_lib', $config);
+				// $this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
 				$judul = strip_tags($this->input->post('xjudul'));
