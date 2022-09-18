@@ -15,7 +15,7 @@ class Home extends CI_Controller
 		$this->m_pengunjung->count_visitor();
 		$this->db->db_debug = FALSE;
 	}
-	function cek_pkp()
+	function cek_php()
 	{
 		echo PHP_VERSION;
 	}
