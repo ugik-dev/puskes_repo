@@ -212,7 +212,8 @@ $profil = getProfil();
   <script src="<?php echo base_url() . 'assets_old/dist/js/app.min.js' ?>"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url() . 'assets_old/dist/js/demo.js' ?>"></script>
-  <script src="<?php echo base_url() . 'assets/ckeditor5/ckeditor.js' ?>"></script>
+  <script src="//cdn.ckeditor.com/4.19.1/full/ckeditor.js"></script>
+
   <script src="<?php echo base_url() . 'assets/ckfinder/ckfinder.js' ?>"></script>
   <!-- <script src="/ckfinder/ckfinder.js"></script> -->
   <!-- <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script> -->
@@ -225,34 +226,35 @@ $profil = getProfil();
         $('#kategori').val('<?= $return_data['kategori'] ?>').change()
         $('#status').val('<?= $return_data['status'] ?>').change()
       <?php } ?>
-      ClassicEditor
-        .create(document.querySelector('#ckeditor'), {
-          ckfinder: {
-            uploadUrl: '<?= base_url() ?>assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
-          },
-          toolbar: {
-            items: ['ckfinder', 'imageUpload', 'toggleImageCaption', 'imageTextAlternative', '|',
-              'heading', '|',
-              'fontfamily', 'fontsize', '|',
-              'alignment', '|',
-              'fontColor', 'fontBackgroundColor', '|',
-              'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
-              'link', '|',
-              'outdent', 'indent', '|',
-              'bulletedList', 'numberedList', 'todoList', '|',
-              'code', 'codeBlock', '|',
-              'insertTable', '|',
-              'uploadImage', 'blockQuote', '|',
-              'undo', 'redo'
-            ],
-            shouldNotGroupWhenFull: true
-          }
-          // toolbar: ['ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList'],
-          // shouldNotGroupWhenFull: true
-        })
-        .catch(error => {
-          console.error(error);
-        });
+      var editor = CKEDITOR.replace('ckeditor');
+      CKFinder.setupCKEditor(editor); //   ClassicEditor
+      //     .create(document.querySelector('#ckeditor'), {
+      //       ckfinder: {
+      //         uploadUrl: '<?= base_url() ?>assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
+      //       },
+      //       toolbar: {
+      //         items: ['ckfinder', 'imageUpload', 'toggleImageCaption', 'imageTextAlternative', '|',
+      //           'heading', '|',
+      //           'fontfamily', 'fontsize', '|',
+      //           'alignment', '|',
+      //           'fontColor', 'fontBackgroundColor', '|',
+      //           'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+      //           'link', '|',
+      //           'outdent', 'indent', '|',
+      //           'bulletedList', 'numberedList', 'todoList', '|',
+      //           'code', 'codeBlock', '|',
+      //           'insertTable', '|',
+      //           'uploadImage', 'blockQuote', '|',
+      //           'undo', 'redo'
+      //         ],
+      //         shouldNotGroupWhenFull: true
+      //       }
+      //       // toolbar: ['ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo', '-', 'numberedList', 'bulletedList'],
+      //       // shouldNotGroupWhenFull: true
+      //     })
+      //     .catch(error => {
+      //       console.error(error);
+      //     });
 
     });
   </script>

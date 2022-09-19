@@ -134,18 +134,17 @@ $profil = getProfil();
               </div>
               <div class="box-body">
                 <div class="form-group">
-                  <label>Tanggal Posting</label>
+                  <label>Tanggal Postings</label>
                   <input type="date" name="tulisan_tanggal" class="form-control" value="<?= !empty($return_data) ? $return_data['tulisan_tanggal'] : ''; ?>" required />
                 </div>
                 <div class="form-group">
                   <label>Kategori</label>
-                  <?= $return_data['tulisan_jenis']; ?>
                   <select class="form-control select2" name="tulisan_jenis" id="tulisan_jenis" style="width: 100%;" required>
                     <option value="">-Pilih-</option>
-                    <option value="Berita">Berita</option>
+                    <!-- <option value="Berita">Berita</option>
                     <option value="Pengumuman">Pengumuman</option>
                     <option value="Agenda">Agenda</option>
-                    <option value="loker">Lowongan Pekerjaan</option>
+                    <option value="loker">Lowongan Pekerjaan</option> -->
 
                     <?php if (!empty($return_data)) {
                       if ($return_data['tulisan_jenis'] == 'Berita')
@@ -154,9 +153,9 @@ $profil = getProfil();
                         echo ' <option value="Berita">Berita</option> ';
 
                       if ($return_data['tulisan_jenis'] == 'Pengumuman')
-                        echo ' <option value="Berita" selected>Berita</option> ';
+                        echo ' <option value="Pengumuman" selected>Pengumuman</option> ';
                       else
-                        echo ' <option value="Berita">Berita</option> ';
+                        echo ' <option value="Pengumuman">Pengumuman</option> ';
 
                       if ($return_data['tulisan_jenis'] == 'Agenda')
                         echo ' <option value="Agenda" selected>Agenda</option> ';
