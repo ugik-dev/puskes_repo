@@ -62,22 +62,15 @@ $config['images'] = array(
 
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
-$cus_url = 'http';
-if (@$_SERVER["HTTPS"] == "on") {
-    $config['base_url'] .= "s";
-}
-$cus_url .= "://";
-$cus_url .= $_SERVER['HTTP_HOST'];
-$cus_url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
-
 
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => $cus_url . 'assets/ckfinder/userfiles/',
-    //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
+    'baseUrl'      => '/assets/ckfinder/userfiles/',
+    // 'baseUrl'      => '/ckfinder/userfiles/',
+    // 'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
-    'chmodFolders' => 0777,
+    'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8',
 );
 
@@ -117,13 +110,13 @@ $config['accessControl'][] = array(
 
     'FOLDER_VIEW'         => true,
     'FOLDER_CREATE'       => true,
-    'FOLDER_RENAME'       => false,
-    'FOLDER_DELETE'       => false,
+    'FOLDER_RENAME'       => true,
+    'FOLDER_DELETE'       => true,
 
     'FILE_VIEW'           => true,
     'FILE_CREATE'         => true,
-    'FILE_RENAME'         => false,
-    'FILE_DELETE'         => false,
+    'FILE_RENAME'         => true,
+    'FILE_DELETE'         => true,
 
     'IMAGE_RESIZE'        => true,
     'IMAGE_RESIZE_CUSTOM' => true
