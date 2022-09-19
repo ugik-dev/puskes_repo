@@ -36,7 +36,7 @@
 						<?php } ?>
 						<div class="post-date ms-0">
 							<span class="day"><?= substr($dataContent['tulisan_tanggal'], 8, 2) ?></span>
-							<span class="month"><?= bulan_indo_singkat(substr($dataContent['tulisan_tanggal'], 5, 2)) ?></span>
+							<span class="month"><?= bulan_indo_singkat(substr($dataContent['tulisan_tanggal'], 5, 2)) . '-' . substr($dataContent['tulisan_tanggal'], 2, 2) ?></span>
 						</div>
 
 						<div class="post-content ms-0">

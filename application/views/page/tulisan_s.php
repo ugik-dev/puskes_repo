@@ -50,7 +50,7 @@
 										<span><i class="far fa-calendar-alt"></i> <?= tgl_indo(substr($brt['tulisan_tanggal'], 0, 10)) ?> </span>
 										<span><i class="far fa-user"></i> Penulis : <a href="#"><?= $brt['tulisan_author'] ?></a> </span>
 										<span><i class="far fa-folder"></i> <a href=""><?= $brt['tulisan_kategori_nama'] ?></a> </span>
-										<span><i class="far fa-comments"></i> <a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>">12 Comments</a></span>
+										<span><i class="far fa-comments"></i> <a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>">0 Comments</a></span>
 										<span class="d-block d-sm-inline-block float-sm-end mt-3 mt-sm-0"><a href="<?= base_url($link . '/' . $brt['tulisan_slug']) ?>" class="btn btn-xs btn-light text-1 text-uppercase">Read More</a></span>
 									</div>
 								</div>

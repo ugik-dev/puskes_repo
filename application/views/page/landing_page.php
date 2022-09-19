@@ -200,7 +200,7 @@
                             <div class="col-auto pe-0">
                                 <div class="date">
                                     <span class="day bg-color-light text-color-dark font-weight-extra-bold"><?= substr($brt['tulisan_tanggal'], 8, 2) ?></span>
-                                    <span class="month bg-color-light font-weight-semibold text-color-primary text-1"><?= bulan_indo_singkat(substr($brt['tulisan_tanggal'], 5, 2)) ?></span>
+                                    <span class="month bg-color-light font-weight-semibold text-color-primary text-1"><?= bulan_indo_singkat(substr($brt['tulisan_tanggal'], 5, 2)) . '-' . substr($brt['tulisan_tanggal'], 2, 2)  ?></span>
                                 </div>
                             </div>
                             <div class="col ps-1">
