@@ -54,7 +54,8 @@ class Menu extends CI_Controller
 	function hapus_menu()
 	{
 		$kode = $this->input->post('kode');
-		$this->m_menu->delete($kode);
+		// var_dump($kode);
+		$this->m_menu->delete(['id_menu' => $kode]);
 		echo $this->session->set_flashdata('msg', 'success-hapus');
 		redirect('admin/menu');
 	}
