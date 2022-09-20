@@ -141,10 +141,6 @@ $profil = getProfil();
                   <label>Kategori</label>
                   <select class="form-control select2" name="tulisan_jenis" id="tulisan_jenis" style="width: 100%;" required>
                     <option value="">-Pilih-</option>
-                    <!-- <option value="Berita">Berita</option>
-                    <option value="Pengumuman">Pengumuman</option>
-                    <option value="Agenda">Agenda</option>
-                    <option value="loker">Lowongan Pekerjaan</option> -->
 
                     <?php if (!empty($return_data)) {
                       if ($return_data['tulisan_jenis'] == 'Berita')
@@ -166,6 +162,11 @@ $profil = getProfil();
                         echo ' <option value="Lowongan Pekerjaan" selected>Lowongan Pekerjaan</option> ';
                       else
                         echo ' <option value="Lowongan Pekerjaan">Lowongan Pekerjaan</option> ';
+                    } else {
+                      echo '<option value="Berita">Berita</option>
+                    <option value="Pengumuman">Pengumuman</option>
+                    <option value="Agenda">Agenda</option>
+                    <option value="loker">Lowongan Pekerjaan</option>';
                     }
                     ?>
                   </select>
