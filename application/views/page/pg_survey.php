@@ -90,8 +90,8 @@
 
 										<div class="row">
 											<div class="form-group col">
-												<label class="form-label mb-1 text-2">Pesan Kesan</label>
-												<textarea maxlength="5000" data-msg-required="Masukkan pesan kesan anda." rows="8" class="form-control text-3 h-auto py-2" name="alasan" required=""></textarea>
+												<label class="form-label mb-1 text-2">Kritik dan Saran</label>
+												<textarea maxlength="5000" data-msg-required="Masukkan kritik dan saran anda." rows="8" class="form-control text-3 h-auto py-2" name="alasan" required=""></textarea>
 											</div>
 										</div>
 
