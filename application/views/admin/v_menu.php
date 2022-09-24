@@ -150,7 +150,15 @@
            </span>
          </a>
        </li>
-       <li class="treeview">
+
+       <li>
+         <a href="<?php echo base_url() . 'admin/survei' ?>">
+           <i class="fa fa-comments"></i> <span>Survey</span>
+
+         </a>
+       </li>
+
+       <!-- <li class="treeview">
          <a href="#">
            <i class="fa fa-newspaper-o"></i>
            <span>Survey</span>
@@ -163,7 +171,7 @@
            <li><a href="<?php echo base_url() . 'admin/survei' ?>"><i class="fa fa-list"></i> Survey</a></li>
            <li><a href="<?php echo base_url() . 'admin/grafik' ?>"><i class="fa fa-bar-chart"></i> Grafik</a></li>
          </ul>
-       </li>
+       </li> -->
      </ul>
    </section>
  </aside>
