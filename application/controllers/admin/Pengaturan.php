@@ -49,54 +49,20 @@ class Pengaturan extends CI_Controller
         $data = $this->input->post();
         $this->upload->initialize($config);
         if (!empty($_FILES['logos']['name'])) {
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = './assets/images';
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = FALSE;
-            $config['quality'] = '60%';
-            $config['width'] = 300;
-            $config['height'] = 100;
-            $config['encrypt_name'] = TRUE;
-            $config['new_image'] = './upload/images';
-            $this->load->library('image_lib', $config);
+
             if ($this->upload->do_upload('logos')) {
                 $gbr = $this->upload->data();
-                $this->image_lib->resize();
-                //Compress Image
-
                 $data['logo'] = $gbr['file_name'];
-                // echo $this->session->set_flashdata('msg', 'success');
-                // redirect('admin/galeri');
             }
         }
         if (!empty($_FILES['kapus_imgs']['name'])) {
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = './assets/images';
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = FALSE;
-            $config['quality'] = '60%';
-            $config['width'] = 300;
-            $config['height'] = 100;
-            $config['encrypt_name'] = TRUE;
-            $config['new_image'] = './upload/images';
-            $this->load->library('image_lib', $config);
+
             if ($this->upload->do_upload('kapus_imgs')) {
                 $gbr = $this->upload->data();
-                $this->image_lib->resize();
-                //Compress Image
-
                 $data['kapus_img'] = $gbr['file_name'];
-                // echo $this->session->set_flashdata('msg', 'success');
-                // redirect('admin/galeri');
             }
         }
-        // var_dump($data);
-
-        // die();
-
-        // $kategori = strip_tags($this->input->post('xkategori'));
         $this->M_pengaturan->update_profil($data);
-        // echo $this->session->set_flashdata('msg', 'info');
         redirect('admin/pengaturan');
     }
 
@@ -108,25 +74,10 @@ class Pengaturan extends CI_Controller
         $data = $this->input->post();
         $this->upload->initialize($config);
         if (!empty($_FILES['header_images']['name'])) {
-            // echo 'ada gambar';
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = './assets/images';
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = FALSE;
-            $config['quality'] = '60%';
-            // $config['width'] = 300;
-            // $config['height'] = 100;
-            $config['encrypt_name'] = TRUE;
-            $config['new_image'] = './upload/images';
-            $this->load->library('image_lib', $config);
             if ($this->upload->do_upload('header_images')) {
                 $gbr = $this->upload->data();
-                $this->image_lib->resize();
-                //Compress Image
 
                 $data['header_image'] = $gbr['file_name'];
-                // echo $this->session->set_flashdata('msg', 'success');
-                // redirect('admin/galeri');
             }
         }
         // var_dump($data);
@@ -147,34 +98,12 @@ class Pengaturan extends CI_Controller
         $data = $this->input->post();
         $this->upload->initialize($config);
         if (!empty($_FILES['header_images']['name'])) {
-            // echo 'ada gambar';
-            $config['image_library'] = 'gd2';
-            $config['source_image'] = './assets/images';
-            $config['create_thumb'] = FALSE;
-            $config['maintain_ratio'] = FALSE;
-            $config['quality'] = '60%';
-            // $config['width'] = 300;
-            // $config['height'] = 100;
-            $config['encrypt_name'] = TRUE;
-            $config['new_image'] = './upload/images';
-            $this->load->library('image_lib', $config);
             if ($this->upload->do_upload('header_images')) {
                 $gbr = $this->upload->data();
-                $this->image_lib->resize();
-                //Compress Image
-
                 $data['header_image'] = $gbr['file_name'];
-                // echo $this->session->set_flashdata('msg', 'success');
-                // redirect('admin/galeri');
             }
         }
-        // var_dump($data);
-
-        // die();
-
-        // $kategori = strip_tags($this->input->post('xkategori'));
         $this->M_pengaturan->update_header($data);
-        // echo $this->session->set_flashdata('msg', 'info');
         redirect('admin/pengaturan/header');
     }
 }
