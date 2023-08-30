@@ -24,20 +24,19 @@
 		<div class="container py-4">
 			<div class="row">
 				<div class="col-lg-9">
-					<tbody>
-						<?php
-						$i = 1;
-						foreach ($dataContent as $pgw) {
-							echo '<tr><td>' . $i . '</td>
+					<table class="table">
+						<tbody>
+							<?php
+							$i = 1;
+							foreach ($dataContent as $pgw) {
+								echo '<tr><td>' . $i . '</td>
 								<td>' . $pgw['file_judul'] . '</td>
 								<td>' . $pgw['file_download'] . '</td>
 								<td><a href="' . base_url('download/get_file/') . $pgw['file_id'] . '"  target="_blank">Download</a></td></tr>';
-							$i++;
-						?>
-
-						<?php } ?>
-
-					</tbody>
+								$i++;
+							?>
+							<?php } ?>
+						</tbody>
 					</table>
 					<div class="row">
 

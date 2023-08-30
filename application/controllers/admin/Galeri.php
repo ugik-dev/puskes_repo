@@ -48,12 +48,13 @@ class Galeri extends CI_Controller
 				$gambar = $gbr['file_name'];
 				$judul = strip_tags($this->input->post('xjudul'));
 				$album = strip_tags($this->input->post('xalbum'));
+				$tanggal = strip_tags($this->input->post('xtanggal'));
 				$kode = $this->session->userdata('idadmin');
 				$user = $this->m_pengguna->get_pengguna_login($kode);
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_galeri->simpan_galeri($judul, $album, $user_id, $user_nama, $gambar);
+				$this->m_galeri->simpan_galeri($judul, $album, $user_id, $user_nama, $gambar, $tanggal);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/galeri');
 			} else {
@@ -92,6 +93,7 @@ class Galeri extends CI_Controller
 				$galeri_id = $this->input->post('kode');
 				$judul = strip_tags($this->input->post('xjudul'));
 				$album = strip_tags($this->input->post('xalbum'));
+				$tanggal = strip_tags($this->input->post('xtanggal'));
 				$images = $this->input->post('gambar');
 				$path = './upload/images/' . $images;
 				unlink($path);
@@ -100,7 +102,7 @@ class Galeri extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_galeri->update_galeri($galeri_id, $judul, $album, $user_id, $user_nama, $gambar);
+				$this->m_galeri->update_galeri($galeri_id, $judul, $album, $user_id, $user_nama, $gambar, $tanggal);
 				echo $this->session->set_flashdata('msg', 'info');
 				redirect('admin/galeri');
 			} else {
@@ -112,11 +114,12 @@ class Galeri extends CI_Controller
 			$judul = strip_tags($this->input->post('xjudul'));
 			$album = strip_tags($this->input->post('xalbum'));
 			$kode = $this->session->userdata('idadmin');
+			$tanggal = strip_tags($this->input->post('xtanggal'));
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_galeri->update_galeri_tanpa_img($galeri_id, $judul, $album, $user_id, $user_nama);
+			$this->m_galeri->update_galeri_tanpa_img($galeri_id, $judul, $album, $user_id, $user_nama, $tanggal);
 			echo $this->session->set_flashdata('msg', 'info');
 			redirect('admin/galeri');
 		}

@@ -351,6 +351,12 @@ $profil = getProfil();
                 <input type="text" name="xjudul" class="form-control" id="inputUserName" placeholder="Judul" required>
               </div>
             </div>
+            <div class="form-group">
+              <label for="inputUserName" class="col-sm-4 control-label">Tanggal</label>
+              <div class="col-sm-7">
+                <input type="date" name="xtanggal" class="form-control" id="inputUserName" placeholder="Tanggal" required>
+              </div>
+            </div>
 
             <div class="form-group">
               <label for="inputUserName" class="col-sm-4 control-label">Album</label>
@@ -418,7 +424,12 @@ $profil = getProfil();
                   <input type="text" name="xjudul" class="form-control" value="<?php echo $galeri_judul; ?>" id="inputUserName" placeholder="Judul" required>
                 </div>
               </div>
-
+              <div class="form-group">
+                <label for="inputUserName" class="col-sm-4 control-label">Tanggal </label>
+                <div class="col-sm-7">
+                  <input type="date" name="xtanggal" class="form-control" value="<?= $i['tanggal2']; ?>" id="inputUserName" placeholder="Tanggal" required>
+                </div>
+              </div>
               <div class="form-group">
                 <label for="inputUserName" class="col-sm-4 control-label">Album</label>
                 <div class="col-sm-7">
